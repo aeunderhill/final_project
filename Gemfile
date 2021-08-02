@@ -7,6 +7,7 @@ ruby '2.6.2'
 gem 'rails', '~> 5.2.2', '>= 5.2.2.1'
 # Use postgres as the database for Active Record
 gem 'pg'
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
