@@ -17,5 +17,6 @@ export const GlobalStyles = createGlobalStyle`
     height: 100vh;
     justify-content: center;
     text-rendering: optimizeLegibility;
+    background-image: url(https://images.pexels.com/photos/743986/pexels-photo-743986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300&w=1000)
   }
   `

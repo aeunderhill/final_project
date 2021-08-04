@@ -12,6 +12,7 @@ import Grid from '@material-ui/core/Grid';
 //import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import { blue } from '@material-ui/core/colors';
 
 function Copyright() {
   return (
@@ -29,7 +30,7 @@ function Copyright() {
 const useStyles = makeStyles((theme) => ({
   root: {
     height: '100vh',
-    width: '160vh'
+    width: '160vh',
   },
   image: {
     backgroundImage: 'url(https://source.unsplash.com/hrx1RkibJu8)',
@@ -52,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
   form: {
     width: '100%', // Fix IE 11 issue.
     marginTop: theme.spacing(1),
+
   },
   submit: {
     margin: theme.spacing(3, 0, 2),

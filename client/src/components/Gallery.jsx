@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: theme.palette.background.black,
   
   },
   imageList: {
@@ -28,31 +28,31 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
- // The example data is structured as follows:
+// data is structured as follows...
  
   //import image from 'path/to/image.jpg';
   //[etc...]
  
   const itemData = [
     {
-      img: 'url(https://unsplash.com/photos/5rsNohd8bY8.jpg)',
+      img: 'https://images.unsplash.com/photo-1617503752587-97d2103a96ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1019&q=80',
       title: 'title 1',
-      author: 'author 1',
+      artist: 'artist 1',
     },
     {
-    img: 'url(https://unsplash.com/photos/J1MznmEvxpk.jpg)',
+    img: 'https://images.unsplash.com/photo-1602526371152-621b3b4e4b4b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
     title: 'title 2',
-    author: 'author 2',
+    artist: 'artist 1',
     },
   {
-    img: 'url(https://unsplash.com/photos/TF3g66Jhs50.jpg)',
+    img: 'https://images.unsplash.com/photo-1574184297860-1d1ba6ea9336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80',
     title: 'title 3',
-    author: 'author 3',
+    artist: 'artist 3',
     },
     {
-      img: 'url(https://unsplash.com/photos/8xUShy6U1I8.jpg)',
+      img: 'https://images.unsplash.com/photo-1544224690-d3d430bef970?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1569&q=80',
       title: 'title 4',
-      author: 'author 4',
+      artist: 'artist 4',
   },
   ];
  
@@ -70,9 +70,9 @@ export default function Gallery() {
             <img src={item.img} alt={item.title} />
             <ImageListItemBar
               title={item.title}
-              subtitle={<span>by: {item.author}</span>}
+              subtitle={<span>by: {item.artist}</span>}
               actionIcon={
-                <IconButton aria-label={`info about ${item.author}`} className={classes.icon}>
+                <IconButton aria-label={`info about ${item.artist}`} className={classes.icon}>
                   <InfoIcon />
                 </IconButton>
               }
