@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import ReactDOM from "react-dom";
 import { ThemeProvider } from 'styled-components';
 import { useOnClickOutside } from './hooks';
 import { GlobalStyles } from './global';
@@ -6,7 +7,7 @@ import { theme } from './theme';
 import { Burger, Menu } from './components';
 import FocusLock from 'react-focus-lock';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import {Home, About, Gallery, Login, Register } from "./components";
+import {Home, About, Gallery, Login, Register, Comments } from "./components";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -14,6 +15,7 @@ function App() {
   const menuId = "main-menu";
 
   useOnClickOutside(node, () => setOpen(false));
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -34,6 +36,7 @@ function App() {
           <Route path="/gallery" ><Gallery/></Route>
           <Route path="/login" component={() => <Login />} />
           <Route path="/register" component={() => <Register />} />
+          <Route path="/comments" component={() => <Comments />} />
         </Switch>
       
       </Router>

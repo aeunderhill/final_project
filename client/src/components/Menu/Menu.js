@@ -29,6 +29,10 @@ const Menu = ({ open, ...props }) => {
         <span aria-hidden="true">🎨</span>
         Gallery
         </a>
+        <a href="/comments" tabIndex={tabIndex}>
+        <span aria-hidden="true">🎨</span>
+        Comments
+        </a>
     </StyledMenu>
   )
 }

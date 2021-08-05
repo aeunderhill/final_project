@@ -7,6 +7,7 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
 //import itemData from './itemData';
+//import { Dropdown } from 'react-bootstrap';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -60,6 +61,7 @@ export default function Gallery() {
   const classes = useStyles();
 
   return (
+    
     <div className={classes.root}>
       <ImageList rowHeight={250} className={classes.imageList}>
         <ImageListItem key="Subheader" cols={2} style={{ height: 'auto' }}>
@@ -81,6 +83,7 @@ export default function Gallery() {
         ))}
       </ImageList>
     </div>
+    
   );
 }
 
