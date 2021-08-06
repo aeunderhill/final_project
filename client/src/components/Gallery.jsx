@@ -39,21 +39,28 @@ const useStyles = makeStyles((theme) => ({
       img: 'https://images.unsplash.com/photo-1617503752587-97d2103a96ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1019&q=80',
       title: 'title 1',
       artist: 'artist 1',
+      category: 'painting'
     },
     {
     img: 'https://images.unsplash.com/photo-1602526371152-621b3b4e4b4b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
     title: 'title 2',
     artist: 'artist 1',
+    category: 'painting'
     },
   {
     img: 'https://images.unsplash.com/photo-1574184297860-1d1ba6ea9336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80',
     title: 'title 3',
     artist: 'artist 3',
+    category: 'painting'
+  
+  
+    
     },
     {
       img: 'https://images.unsplash.com/photo-1544224690-d3d430bef970?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1569&q=80',
       title: 'title 4',
       artist: 'artist 4',
+      category: 'painting'
   },
   ];
  
@@ -72,6 +79,7 @@ export default function Gallery() {
             <img src={item.img} alt={item.title} />
             <ImageListItemBar
               title={item.title}
+              category={item.category}
               subtitle={<span>by: {item.artist}</span>}
               actionIcon={
                 <IconButton aria-label={`info about ${item.artist}`} className={classes.icon}>

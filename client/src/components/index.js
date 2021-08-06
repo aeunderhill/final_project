@@ -7,4 +7,4 @@ export { default as Gallery } from "./Gallery";
 export { default as Login } from "./Login";
 export { default as Register } from "./Register";export { default as Burger } from "./Burger";
 export { default as Menu } from "./Menu";
-export { default as Comments } from "./Comments";
+//export { default as Comments } from "./Comments"
