@@ -53,7 +53,6 @@ const useStyles = makeStyles((theme) => ({
     artist: 'artist 3',
     category: 'painting'
   
-  
     
     },
     {
