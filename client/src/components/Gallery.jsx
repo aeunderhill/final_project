@@ -6,8 +6,11 @@ import ImageListItemBar from '@material-ui/core/ImageListItemBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
+import BrushIcon from '@material-ui/icons/Brush';
+//import { Link } from '@material-ui/core';
 //import itemData from './itemData';
 //import { Dropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -67,11 +70,12 @@ export default function Gallery() {
   const classes = useStyles();
 
   return (
-    
+
     <div className={classes.root}>
       <ImageList rowHeight={250} className={classes.imageList}>
         <ImageListItem key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <ListSubheader component="div"><h3>Gallery</h3></ListSubheader>
+          <ListSubheader component="div"><h3>Gallery of Completed Commissions:</h3>
+          <h4>Click on the paint brush icon to submit a request:</h4></ListSubheader>
         </ImageListItem>
         {itemData.map((item) => (
           <ImageListItem key={item.img}>
@@ -81,8 +85,9 @@ export default function Gallery() {
               category={item.category}
               subtitle={<span>by: {item.artist}</span>}
               actionIcon={
-                <IconButton aria-label={`info about ${item.artist}`} className={classes.icon}>
-                  <InfoIcon />
+                <IconButton component={Link} to="/about"
+                aria-label={`info about ${item.artist}`} className={classes.icon}>
+                  <BrushIcon />
                 </IconButton>
               }
             />
