@@ -9,7 +9,7 @@
   border-radius: 10px;
   border-color: black;
 
-  background-color: white;
+  background-color: rgb(41, 92, 150);
 }
 
 .request_edit_dashboard:hover{
@@ -62,7 +62,7 @@
 }
 #input_description:focus {
   border: 3px solid #ccc;
-  background-color: lightblue;
+  background-color:rgb(41, 92, 150);
 }
 
 #input_expected_finish_date {

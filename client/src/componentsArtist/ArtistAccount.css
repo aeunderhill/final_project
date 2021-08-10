@@ -5,6 +5,7 @@
   position: relative;
   top: 10px;
   margin: 0;
+ 
 
 }
 
@@ -18,9 +19,16 @@
 .ArtistAccount_div_h3{
   display: flex;
   justify-content: center;
+  background-color:rgb(41, 92, 150);
+  margin-left: 200px;
+  margin-top: 10px;
+  margin-right: 200px;
+  
 
   outline: black;
   outline-style: double;
+  outline-width: thick;
+  
   
 
   color: black;

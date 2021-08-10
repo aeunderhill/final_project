@@ -16,10 +16,12 @@
 
 .Dropdown-control{
   height: 100%;
-  background-color: #DFCAF5;
+  background-color: rgb(41, 92, 150);
   font-family: 'Times New Roman', Times, serif;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 700;
+  
+  
   
   
 }
