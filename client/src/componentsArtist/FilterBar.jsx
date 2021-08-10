@@ -8,6 +8,6 @@ export default function FilterBar (props) {
   const defaultOption = options[0];
   
   return (
-    <Dropdown options={options} onChange={props.onSelect} value={defaultOption} placeholder="Select an option" />
+    <Dropdown options={options} onChange={(props.onSelect)} placeholder="Select an option" />
   )
 }

@@ -11,11 +11,17 @@ const {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequ
 export default function Dashboard(props) {
 
   const {data , setData} = useContext(stateContext);
+ 
+  const entries = Object.entries(data.requests)
+  const initialDisplay = entries.map((item)=> item[1])
+ 
 
-  console.log('DATA ---' , data)
+  const [display, setDisplay] = useState(initialDisplay)
+
+
 
   const requests = getUnFinishedRequests(requests_for_test)
-  // const [requestState, setrequestState] = useState(requests)
+ 
 
   function acceptRequest(request) {
 
@@ -23,7 +29,7 @@ export default function Dashboard(props) {
    
     axios.put(`/api/requests/${request.id}`, acceptedRequest).then((response) => {
       let id = acceptedRequest.id
-      console.log('This is accepted id',id)
+      
      const requests = {...data.requests,  id : acceptedRequest}
 
       
@@ -31,21 +37,21 @@ export default function Dashboard(props) {
     }).catch((error) => {console.log(error)})
   }
 
-  // function filterbyCategory(requests, e) {
-  //   alert("this is Filtering Category")
-  //   const categories = ['ALL Categories', 'Guitar', 'Art', 'Handycraft']
-  //   const category_id = categories.indexOf(e.label)
+  function filterbyCategory(requests, e) {
+    // alert("this is Filtering Category")
+    
+    const category_id = data.categoriesApi.indexOf(e.value)
 
-  //   const requestsofCategory = getRequestsbyCategory(requests, category_id)
-  //   setrequestState(requestsofCategory)
-  // }
+    const requestsofCategory = getRequestsbyCategory(requests, category_id)
+    setDisplay(requestsofCategory)
+  }
 
   function filterbyStatus(requests, e) {
     alert("this is Filtering Status")
 
-    const requestsofCategory = getRequestsbyStatus(requests, e.label)
+    const requestsofCategory = getRequestsbyStatus(requests, e.value)
     // console.log(e.label)
-    // setrequestState(requestsofCategory)
+    setDisplay(requestsofCategory)
   }
 
   
@@ -56,7 +62,7 @@ export default function Dashboard(props) {
 
   const dashboard_unaccepted = Object.entries(data.requests).map((request) => {
     if (!request.artist_id && !request.start_date) {
-      // client = findUserbyUserId(users_for_test, request.client_id)[0]
+      client = findUserbyUserId(users_for_test, request.client_id)[0]
       // console.log(client)
   
       return (
@@ -112,7 +118,7 @@ export default function Dashboard(props) {
         acceptRequest = {acceptRequest}
           tag = {tag}
           hidden = {hidden}
-          // client = {client}
+          client = {client}
         />
       )
     } else {
@@ -120,18 +126,27 @@ export default function Dashboard(props) {
     }
   })
 
-  const categotyOptions = ['ALL Categories', 'Guitar', 'Art', 'Handycraft'];
+
   const statusOptions = ['All', 'Unaccepted', 'Accepted', 'In Process'];
+  let categoryOptions;
+ if (data.categoriesApi)
+  {categoryOptions =data.categoriesApi.map((category) => category.name)
+    console.log(categoryOptions)
+    }
+
+
 
   return (
     <main>
       <nav className="ArtistRequests_nav">
+     { categoryOptions && <FilterBar 
+          onSelect = {(e) => filterbyCategory(display, e)}
+          options = {categoryOptions}
+          
+        />}
         <FilterBar 
-          // onSelect = {(e) => filterbyCategory(requests, e)}
-          options = {categotyOptions}
-        />
-        <FilterBar 
-          onSelect = {(e) => filterbyStatus(requests, e)}
+          onSelect = {(e) => {filterbyStatus(data.requests, e.target.value)
+          console.log('this is event', e)}}
           options = {statusOptions}
         />
       </nav>
