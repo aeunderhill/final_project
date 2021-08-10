@@ -19,7 +19,7 @@ export default function Dashboard(props) {
   console.log('Initial' ,initialDisplay)
  
   const [display, setDisplay] = useState([])
-  setDisplay(initialDisplay)
+  // setDisplay(initialDisplay)
 
 console.log('Display state',display)
 
@@ -48,8 +48,8 @@ console.log('Display state',display)
       console.log('Category selected', category)
       console.log('This is display',display)
       
-      const requestsofCategory = getRequestsbyCategory(display, category.id)
-      setDisplay(requestsofCategory)
+      // const requestsofCategory = getRequestsbyCategory(display, category.id)
+      // setDisplay(requestsofCategory)
   }
 
   function filterbyStatus(requests, e) {
