@@ -7,7 +7,7 @@ import "./DashboardShowArtist.css"
 export default function Dashboard(props) {
   // const {id, image, name, description, price, expected_finish_date,  actual_finish_date, index, acceptRequest, tag, hidden, client} = props
 
-  const {request, acceptRequest, hidden} = props
+  const {request, acceptRequest, hidden, client} = props
 
   // console.log('Request ---', props.request)
 return (
@@ -30,6 +30,7 @@ return (
         <label>Description: </label>
         <span>{request.description}</span>
       </div>
+    
 
       {/* <div className="request_show_details">
         <label>Client Name: </label>

@@ -67,9 +67,9 @@ export default function StateProvider(props) {
         messagesApi.map((client)=> messages[client.id] = client)
 
 
+        //all postfixed with "Api" are arrays, else objects.
 
-
-        setData((prev) => ({ ...prev, clients, artists, requests, categoriesApi, reviews, commentsApi, messages}));
+        setData((prev) => ({ ...prev, clientsApi, artists, requests, categoriesApi, reviews, commentsApi, messages}));
       })
       .catch((error) => {
         console.log(error);
