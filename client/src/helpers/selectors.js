@@ -39,7 +39,7 @@ function getRequestsbyUser(requests, user_id) {
 }
 
 function findUserbyUserId(users, user_id) {
-  return users.filter((user) => {
+  return users.find((user) => {
     return user.id === user_id;
   });
 }

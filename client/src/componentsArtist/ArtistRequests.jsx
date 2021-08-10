@@ -64,11 +64,11 @@ console.log('Display state',display)
   
   let tag = null;
   let hidden = "";
-  let client;
+  // let client;
 
   const dashboard_unaccepted = Object.entries(data.requests).map((request) => {
-    if (!request.artist_id && !request.start_date) {
-      client = findUserbyUserId(data.clientsApi, request.client_id)[0]
+    if (!request[1].artist_id && !request[1].start_date) {
+      const client = findUserbyUserId(data.clientsApi, request[1].client_id)
       // console.log(client)
   
       return (
@@ -88,11 +88,11 @@ console.log('Display state',display)
   })
 
   const dashboard_accepted = Object.entries(data.requests).map((request) => {
-    if (request.artist_id && !request.start_date) {
+    if (request[1].artist_id && !request[1].start_date) {
       tag = "accepted"
       hidden = "true"
-      client = findUserbyUserId(data.clientsApi, request.client_id)[0]
-      // console.log(client)
+      const client = findUserbyUserId(data.clientsApi, request[1].client_id)
+      // console.log('This is client' ,client)
   
       return (
         request && <DashboardShowArtist 
@@ -111,10 +111,10 @@ console.log('Display state',display)
   
   const dashboard_inprocess = Object.entries(data.requests).map((request) => {
     
-    if (request.artist_id && request.start_date) {
+    if (request[1].artist_id && request[1].start_date) {
       tag = "in process"
       hidden = "true"
-      client = findUserbyUserId(data.clientsApi, request.client_id)[0]
+      const client = findUserbyUserId(data.clientsApi, request[1].client_id)
       // console.log(client)
   
       return (
