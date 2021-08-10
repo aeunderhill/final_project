@@ -9,7 +9,7 @@
   border-radius: 10px;
   border-color: black;
 
-  background-color: white;
+  background-color: rgb(151, 151, 216);
 }
 
 .request_show_dashboard:hover{
@@ -19,6 +19,7 @@
 .request_show_dashboard_header{
   margin-left: 5%;
   margin-right: 5%;
+  color: rgb(185, 66, 10)
 }
 
 .request_show_Tag {
@@ -31,6 +32,7 @@
 
 .request_show_dashboard_h2{
   width: 30%;
+  font-family: 'Patrick Hand SC', cursive;
 }
 
 .request_show_dashboard_img{

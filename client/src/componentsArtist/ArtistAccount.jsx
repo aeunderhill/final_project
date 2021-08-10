@@ -72,7 +72,7 @@ export default function Dashboard(props) {
           button2Request={finishRequest}
           button3Request={denyRequest}
           button1 = "Update"
-          button2 = ""
+          button2 = "Client Accepted"
           button3 = "Deny"
           tag="accepted"
           client = {client}

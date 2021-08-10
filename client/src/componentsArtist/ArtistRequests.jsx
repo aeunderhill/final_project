@@ -10,7 +10,7 @@ const {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequ
 
 export default function Dashboard(props) {
   function acceptRequest(index) {
-    alert("this is working")
+    //alert("this is working")
     const requestCopy = [...requestState]
     requestCopy[index]["artist_id"] = 1;
     // 1 needs to be changed to the logged in artist_id

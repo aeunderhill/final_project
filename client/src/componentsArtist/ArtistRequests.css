@@ -9,7 +9,7 @@
 .Dropdown-root{
   height: 70%;
   width: 20%;
-  background-color: #DFCAF5;
+  background-color: #f5e1ca;
   /* display: flex; */
   /* align-items: center; */
 }
@@ -21,6 +21,7 @@
   font-size: 20px;
   font-weight: 700;
   
+  
 }
 
 .Dropdown-menu{
@@ -31,4 +32,5 @@
 .ArtistRequests_div{
   display: flex;
   flex-wrap: wrap;
+  
 }

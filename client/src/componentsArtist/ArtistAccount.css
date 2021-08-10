@@ -12,6 +12,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  background-color:rgb(72, 53, 124)
 }
 
 .ArtistAccount_div_h3{
@@ -20,12 +21,15 @@
 
   outline: black;
   outline-style: double;
+  
 
   color: black;
 }
 
 .ArtistAccount_div_dashboards {
   display: flex;
+  
+
 }
 
 

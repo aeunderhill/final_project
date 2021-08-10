@@ -9,7 +9,7 @@
   border-radius: 10px;
   border-color: black;
 
-  background-color: white;
+  background-color: rgb(126, 37, 15);
 }
 
 .request_show_dashboard:hover{
@@ -26,7 +26,8 @@
 }
 
 #w3-container_finishTag{
-  margin-left: -30%
+  margin-left: -30%;
+  
 }
 
 .request_show_dashboard_h2{
@@ -35,7 +36,8 @@
 
 .request_show_dashboard_img{
   width: 90%;
-  margin: 5%
+  margin: 5%;
+  background-color: rgb(126, 37, 15);
 }
 
 .request_show_infor {
@@ -43,6 +45,7 @@
   flex-direction: column;
   margin:auto;
   width: 80%;
+  
 }
 
 .request_show_details{
