@@ -1,5 +1,6 @@
 .home{
   color: hsl(255, 86%, 48%);
+  font: cursive;
   
   
 
@@ -7,7 +8,7 @@
 
 .hometitle{
   font-size: 180px;
-  font-family: cursive; 
+  font: cursive; 
   overflow: hidden;
   position: absolute;
   width: 100%;
@@ -15,6 +16,6 @@
   display: flex;
   justify-content: center; /*centers items on the line (the x-axis by default)*/
   align-items: center; /*centers items on the cross-axis (y by default)*/
-  background-image: url("https://images.pexels.com/photos/743986/pexels-photo-743986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300&w=750");
+  background-image: url("https://images.pexels.com/photos/743986/pexels-photo-743986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=310&w=750");
 }
  
