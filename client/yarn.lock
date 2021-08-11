@@ -1410,6 +1410,11 @@
     "@svgr/plugin-svgo" "^4.0.3"
     "loader-utils" "^1.1.0"
 
+"@types/cookie@^0.3.3":
+  "integrity" "sha512-LKVP3cgXBT9RYj+t+9FDKwS5tdI+rPBXaNSkma7hvqy35lc7mAokC2zsqWJH0LaqIt3B962nuYI77hsJoT1gow=="
+  "resolved" "https://registry.npmjs.org/@types/cookie/-/cookie-0.3.3.tgz"
+  "version" "0.3.3"
+
 "@types/invariant@^2.2.33":
   "integrity" "sha512-lYUtmJ9BqUN688fGY1U1HZoWT1/Jrmgigx2loq4ZcJpICECm/Om3V314BxdzypO0u5PORKGMM6x0OXaljV1YFg=="
   "resolved" "https://registry.npmjs.org/@types/invariant/-/invariant-2.2.34.tgz"
@@ -3113,7 +3118,7 @@
   "resolved" "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.6.tgz"
   "version" "1.0.6"
 
-"cookie@0.4.0":
+"cookie@^0.4.0", "cookie@0.4.0":
   "integrity" "sha512-+Hp8fLp57wnUSt0tY0tHEXh4voZRDnoIrZPqlo3DPiI4y9lwg/jqx+1Om94/W6ZaPDOUbnjOt/99w66zk+l1Xg=="
   "resolved" "https://registry.npmjs.org/cookie/-/cookie-0.4.0.tgz"
   "version" "0.4.0"
@@ -10703,6 +10708,14 @@
   "version" "2.0.2"
   dependencies:
     "imurmurhash" "^0.1.4"
+
+"universal-cookie@^4.0.4":
+  "integrity" "sha512-lbRVHoOMtItjWbM7TwDLdl8wug7izB0tq3/YVKhT/ahB4VDvWMyvnADfnJI8y6fSvsjh51Ix7lTGC6Tn4rMPhw=="
+  "resolved" "https://registry.npmjs.org/universal-cookie/-/universal-cookie-4.0.4.tgz"
+  "version" "4.0.4"
+  dependencies:
+    "@types/cookie" "^0.3.3"
+    "cookie" "^0.4.0"
 
 "universalify@^0.1.0":
   "integrity" "sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg=="
