@@ -48,8 +48,7 @@
 
 .ArtistAccount_div_dashboards {
   display: flex;
-  
-
+  flex-wrap: wrap;
 }
 
 

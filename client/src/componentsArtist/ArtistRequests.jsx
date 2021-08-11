@@ -1,51 +1,53 @@
-import React, { useState } from "react";
+import React, {useState, useContext, useEffect} from "react";
+import axios from "axios";
 
 import DashboardShowArtist from "./DashboardShowArtist.jsx"
 import FilterBar from "./FilterBar.jsx";
+import useData from "../hooks/useData.js";
+import Cookies from 'universal-cookie';
 
 import "./ArtistRequests.css"
 
 const {requests_for_test, artists_for_test, users_for_test, categories_for_test} = require("../testingData")
-const {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequestsbyCategory,getRequestsbyUser, findUserbyUserId, getRequestsbyStatus} = require("../helpers/selectors")
+const {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequestsbyCategory,getRequestsbyUser, findUserbyUserId, getRequestsbyStatus, findRequestIndex} = require("../helpers/selectors")
 
 export default function Dashboard(props) {
-  function acceptRequest(index) {
-    //alert("this is working")
+  const {data, updateRequestBackend, deleteRequestBackend} = useData()
+  const requests = getUnFinishedRequests(data.requestsApi)
+  const [requestState, setrequestState] = useState(requests)
+  useEffect(() => {
+    setrequestState(requests)
+  }, [data])
+
+
+  function acceptRequest(index) { 
     const requestCopy = [...requestState]
-    requestCopy[index]["artist_id"] = 1;
-    // 1 needs to be changed to the logged in artist_id
+    requestCopy[index]["artist_id"] = Number(user_id);
     setrequestState(requestCopy)
-    // axios.put("/artist_request", requests)
+
+    updateRequestBackend(requestCopy, index)
   }
 
   function filterbyCategory(requests, e) {
-    alert("this is Filtering Category")
     const categories = ['ALL Categories', 'Guitar', 'Art', 'Handycraft']
     const category_id = categories.indexOf(e.label)
-
     const requestsofCategory = getRequestsbyCategory(requests, category_id)
     setrequestState(requestsofCategory)
   }
 
   function filterbyStatus(requests, e) {
-    alert("this is Filtering Status")
-
     const requestsofCategory = getRequestsbyStatus(requests, e.label)
-    console.log(e.label)
     setrequestState(requestsofCategory)
   }
 
-  const requests = getUnFinishedRequests(requests_for_test)
-  const [requestState, setrequestState] = useState(requests)
-  
-  let tag = null;
-  let hidden = "";
   let client;
+  const cookies = new Cookies();
+  const user_id = cookies.get('user_id')
+  const user_identity = cookies.get('identity')
 
   const dashboard_unaccepted = requestState.map((request, index) => {
     if (!request.artist_id && !request.start_date) {
-      client = findUserbyUserId(users_for_test, request.client_id)[0]
-      console.log(client)
+      client = findUserbyUserId(data.clientsApi, request.client_id)[0]
   
       return (
         <DashboardShowArtist 
@@ -57,23 +59,16 @@ export default function Dashboard(props) {
           expected_finish_date={request.expected_finish_date}
           index = {index}
           acceptRequest = {acceptRequest}
-          tag = {tag}
-          hidden = {hidden}
+          hidden = ""
           client = {client}
         />
       )
-    } else {
-      return null
-    }
-
+    } 
   })
-
+  
   const dashboard_accepted = requestState.map((request, index) => {
     if (request.artist_id && !request.start_date) {
-      tag = "accepted"
-      hidden = "true"
-      client = findUserbyUserId(users_for_test, request.client_id)[0]
-      console.log(client)
+      client = findUserbyUserId(data.clientsApi, request.client_id)[0]
   
       return (
         <DashboardShowArtist 
@@ -85,22 +80,17 @@ export default function Dashboard(props) {
           expected_finish_date={request.expected_finish_date}
           index = {index}
           acceptRequest = {acceptRequest}
-          tag = {tag}
-          hidden = {hidden}
+          tag = "accepted"
+          hidden = "true"
           client = {client}
         />
       )
-    } else {
-      return null
     }
   })
 
   const dashboard_inprocess = requestState.map((request, index) => {
     if (request.artist_id && request.start_date) {
-      tag = "in process"
-      hidden = "true"
-      client = findUserbyUserId(users_for_test, request.client_id)[0]
-      console.log(client)
+      client = findUserbyUserId(data.clientsApi, request.client_id)[0]
   
       return (
         <DashboardShowArtist 
@@ -112,13 +102,11 @@ export default function Dashboard(props) {
           expected_finish_date={request.expected_finish_date}
           index = {index}
           acceptRequest = {acceptRequest}
-          tag = {tag}
-          hidden = {hidden}
+          tag = "in process"
+          hidden = "true"
           client = {client}
         />
       )
-    } else {
-      return null
     }
   })
 
