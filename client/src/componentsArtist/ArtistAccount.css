@@ -23,18 +23,25 @@
   margin-left: 200px;
   margin-top: 10px;
   margin-right: 200px;
-  background-color: rgb(248, 244, 124);
-  border-image-source: url('https://cdn.pixabay.com/photo/2014/08/25/16/17/picture-frame-427233_1280.jpg');
-  
-  
-  
 
-  
-  
-  
-  
 
-  color: black;
+  border: 12px outset rgba(28,110,164,0.7);
+  border-radius: 17px;
+
+  /*box-sizing: border-box;
+	width: 60%; height: 100px;
+	display: block;
+	padding: 10%;
+	background-color: #A67B5B;
+	background-image: url();
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: 6px double #483C32;
+	box-shadow: 0 0 0 25px rgba(244,240,236,0.4) inset,
+	 0 0 0 11px rgb(180, 130, 90),
+	  0 0 15px rgba(0,0,0,0.8) inset;
+	outline: 2px solid #333;
+	outline-offset: 0px;*/
 }
 
 .ArtistAccount_div_dashboards {
