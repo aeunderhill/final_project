@@ -18,6 +18,6 @@ export const GlobalStyles = createGlobalStyle`
     justify-content: center;
     text-rendering: optimizeLegibility;
     background-image: url("https://images.pexels.com/photos/1561020/pexels-photo-1561020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-    z-index: 2
+    
   }
   `
