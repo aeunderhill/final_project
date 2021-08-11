@@ -44,23 +44,49 @@ export default function Dashboard(props) {
     .catch((error) => {console.log(error)})
   }
 
-  function filterbyCategory(requests, e) {
-    alert("this is Filtering Category")
-    const categories = ['ALL Categories', 'Guitar', 'Art', 'Handycraft']
-    const category_id = categories.indexOf(e.label)
+  const {data , setData} = useContext(stateContext);
 
-    const requestsofCategory = getRequestsbyCategory(requests, category_id)
-    setrequestState(requestsofCategory)
+  console.log('DATA ---' , data)
+
+  const requests = getUnFinishedRequests(requests_for_test)
+  // const [requestState, setrequestState] = useState(requests)
+
+  function acceptRequest(request) {
+
+  const acceptedRequest = {...request[1], artist_id : 41}
+   
+    axios.put(`/api/requests/${request.id}`, acceptedRequest).then((response) => {
+      let id = acceptedRequest.id
+      console.log('This is accepted id',id)
+     const requests = {...data.requests,  id : acceptedRequest}
+
+      
+      setData((prev)=> ({...prev, requests : requests }))
+    }).catch((error) => {console.log(error)})
   }
+
+  // function filterbyCategory(requests, e) {
+  //   alert("this is Filtering Category")
+  //   const categories = ['ALL Categories', 'Guitar', 'Art', 'Handycraft']
+  //   const category_id = categories.indexOf(e.label)
+
+  //   const requestsofCategory = getRequestsbyCategory(requests, category_id)
+  //   setrequestState(requestsofCategory)
+  // }
 
   function filterbyStatus(requests, e) {
     alert("this is Filtering Status")
 
     const requestsofCategory = getRequestsbyStatus(requests, e.label)
-    console.log(e.label)
-    setrequestState(requestsofCategory)
+    // console.log(e.label)
+    // setrequestState(requestsofCategory)
   }
 
+<<<<<<< HEAD
+=======
+  
+  
+>>>>>>> master
   let tag = null;
   let hidden = "";
   let client;
@@ -69,19 +95,19 @@ export default function Dashboard(props) {
   const user_identity = cookies.get('identity')
 
 
-  const dashboard_unaccepted = requestState.map((request, index) => {
+  const dashboard_unaccepted = Object.entries(data.requests).map((request) => {
     if (!request.artist_id && !request.start_date) {
+<<<<<<< HEAD
       client = findUserbyUserId(data.clientsApi, request.client_id)[0]
+=======
+      // client = findUserbyUserId(users_for_test, request.client_id)[0]
+      // console.log(client)
+>>>>>>> master
   
       return (
-        <DashboardShowArtist 
-          id={request.id}
-          image={request.image}
-          name={request.name}
-          description={request.description}
-          price={request.price}
-          expected_finish_date={request.expected_finish_date}
-          index = {index}
+        request && <DashboardShowArtist 
+        key={request[0]}
+        request = {request[1]}
           acceptRequest = {acceptRequest}
           tag = {tag}
           hidden = {hidden}
@@ -93,23 +119,28 @@ export default function Dashboard(props) {
     }
 
   })
+<<<<<<< HEAD
   
   const dashboard_accepted = requestState.map((request, index) => {
     if (request.artist_id && !request.start_date) {
       tag = "accepted"
       hidden = "true"
       client = findUserbyUserId(data.clientsApi, request.client_id)[0]
+=======
+
+  const dashboard_accepted = Object.entries(data.requests).map((request) => {
+    if (request.artist_id && !request.start_date) {
+      tag = "accepted"
+      hidden = "true"
+      client = findUserbyUserId(users_for_test, request.client_id)[0]
+      // console.log(client)
+>>>>>>> master
   
       return (
-        <DashboardShowArtist 
-          id={request.id}
-          image={request.image}
-          name={request.name}
-          description={request.description}
-          price={request.price}
-          expected_finish_date={request.expected_finish_date}
-          index = {index}
-          acceptRequest = {acceptRequest}
+        request && <DashboardShowArtist 
+        key={request[0]}
+        request = {request[1]}
+        acceptRequest = {acceptRequest}
           tag = {tag}
           hidden = {hidden}
           client = {client}
@@ -119,26 +150,27 @@ export default function Dashboard(props) {
       return null
     }
   })
-
-  const dashboard_inprocess = requestState.map((request, index) => {
+  
+  const dashboard_inprocess = Object.entries(data.requests).map((request) => {
+    
     if (request.artist_id && request.start_date) {
       tag = "in process"
       hidden = "true"
+<<<<<<< HEAD
       client = findUserbyUserId(data.clientsApi, request.client_id)[0]
+=======
+      client = findUserbyUserId(users_for_test, request.client_id)[0]
+      // console.log(client)
+>>>>>>> master
   
       return (
-        <DashboardShowArtist 
-          id={request.id}
-          image={request.image}
-          name={request.name}
-          description={request.description}
-          price={request.price}
-          expected_finish_date={request.expected_finish_date}
-          index = {index}
-          acceptRequest = {acceptRequest}
+        request && <DashboardShowArtist 
+        key={request[0]}
+        request = {request[1]}
+        acceptRequest = {acceptRequest}
           tag = {tag}
           hidden = {hidden}
-          client = {client}
+          // client = {client}
         />
       )
     } else {
@@ -153,7 +185,7 @@ export default function Dashboard(props) {
     <main>
       <nav className="ArtistRequests_nav">
         <FilterBar 
-          onSelect = {(e) => filterbyCategory(requests, e)}
+          // onSelect = {(e) => filterbyCategory(requests, e)}
           options = {categotyOptions}
         />
         <FilterBar 
