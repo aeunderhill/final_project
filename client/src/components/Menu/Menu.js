@@ -12,42 +12,6 @@ const Menu = ({ open, ...props }) => {
   const isHidden = open ? true : false;
   const tabIndex = isHidden ? 0 : -1;
 
-<<<<<<< HEAD
-  return (
-    
-    <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
-      <a href="/" tabIndex={tabIndex}>
-        <span aria-hidden="true"> </span>
-        Home
-      </a>
-      <a href="/about" tabIndex={tabIndex}>
-        <span aria-hidden="true">  </span>
-        About us
-      </a>
-      <a href="/login" tabIndex={tabIndex}>
-        <span aria-hidden="true">  </span>
-        Login
-      </a>
-      <a href="/register" tabIndex={tabIndex}>
-        <span aria-hidden="true">  </span>
-        Register
-      </a>
-      <a href="/gallery" tabIndex={tabIndex}>
-        <span aria-hidden="true">  </span>
-        Gallery
-        
-      </a>
-      <a href="/ArtistRequests" tabIndex={tabIndex}>
-        <span aria-hidden="true">  </span>
-        Commission Requests
-      </a>
-      <a href="/ArtistAccount" tabIndex={tabIndex}>
-        <span aria-hidden="true">  </span>
-        My Artist Account
-      </a>
-    </StyledMenu>
-  );
-=======
   const cookies = new Cookies();
 
   const user_id = cookies.get('user_id')
@@ -58,23 +22,23 @@ const Menu = ({ open, ...props }) => {
     return (
       <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
         <a href="/" tabIndex={tabIndex}>
-          <span aria-hidden="true"> 🏠</span>
+          <span aria-hidden="true"></span>
           Home
         </a>
         <a href="/about" tabIndex={tabIndex}>
-          <span aria-hidden="true"> 💡 </span>
+          <span aria-hidden="true"></span>
           About us
         </a>
         <a href="/gallery" tabIndex={tabIndex}>
-          <span aria-hidden="true"> 🎨 </span>
+          <span aria-hidden="true"></span>
           Gallery
         </a>
         <a href="/UserCommission" tabIndex={tabIndex}>
-          <span aria-hidden="true"> 🗃 </span>
+          <span aria-hidden="true"></span>
           Submit your Request
         </a>
         <a href="/UserAccount" tabIndex={tabIndex}>
-          <span aria-hidden="true"> 🗂  </span>
+          <span aria-hidden="true"></span>
           Your Account
         </a>
         <button 
@@ -91,23 +55,23 @@ const Menu = ({ open, ...props }) => {
     return (
       <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
         <a href="/" tabIndex={tabIndex}>
-          <span aria-hidden="true"> 🏠</span>
+          <span aria-hidden="true"></span>
           Home
         </a>
         <a href="/about" tabIndex={tabIndex}>
-          <span aria-hidden="true"> 💡 </span>
+          <span aria-hidden="true"></span>
           About us
         </a>
         <a href="/gallery" tabIndex={tabIndex}>
-          <span aria-hidden="true"> 🎨 </span>
+          <span aria-hidden="true"></span>
           Gallery
         </a>
         <a href="/ArtistRequests" tabIndex={tabIndex}>
-          <span aria-hidden="true"> 🗃 </span>
+          <span aria-hidden="true"></span>
           Requests
         </a>
         <a href="/ArtistAccount" tabIndex={tabIndex}>
-          <span aria-hidden="true"> 🗂  </span>
+          <span aria-hidden="true"></span>
           Your Account
         </a>
         <button className="logout" onClick={() => {
@@ -122,23 +86,23 @@ const Menu = ({ open, ...props }) => {
     return (
       <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
         <a href="/" tabIndex={tabIndex}>
-          <span aria-hidden="true"> 🏠</span>
+          <span aria-hidden="true"></span>
           Home
         </a>
         <a href="/about" tabIndex={tabIndex}>
-          <span aria-hidden="true"> 💡 </span>
+          <span aria-hidden="true"></span>
           About us
         </a>
         <a href="/login" tabIndex={tabIndex}>
-          <span aria-hidden="true"> s🗂 </span>
+          <span aria-hidden="true"></span>
           Login
         </a>
         <a href="/register" tabIndex={tabIndex}>
-          <span aria-hidden="true"> 🗃 </span>
+          <span aria-hidden="true"></span>
           Register
         </a>
         <a href="/gallery" tabIndex={tabIndex}>
-          <span aria-hidden="true"> 🎨 </span>
+          <span aria-hidden="true"></span>
           Gallery
         </a>
       </StyledMenu>
@@ -146,7 +110,6 @@ const Menu = ({ open, ...props }) => {
   }
 
 
->>>>>>> master
 };
 
 Menu.propTypes = {

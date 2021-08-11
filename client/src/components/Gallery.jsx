@@ -4,8 +4,10 @@ import ImageList from '@material-ui/core/ImageList';
 import ImageListItem from '@material-ui/core/ImageListItem';
 import ImageListItemBar from '@material-ui/core/ImageListItemBar';
 import IconButton from '@material-ui/core/IconButton';
-import InfoIcon from '@material-ui/icons/Info';
+//import InfoIcon from '@material-ui/icons/Info';
+import BrushIcon from '@material-ui/icons/Brush';
 import useData from "../hooks/useData.js";
+import { Link } from 'react-router-dom';
 import "./layout.css"
 
 // import Comment from './comment.js.jsx';
@@ -20,10 +22,10 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper, 
+    backgroundColor: theme.palette.background.black, 
   },
   imageList: {
-    width: 905,
+    width: 805,
     height: 500,
     
   },
@@ -40,7 +42,7 @@ export default function Gallery() {
 
   return (
     <>
-    <h2 className="gallery_h2">Gallery</h2>
+    <h2 className="gallery_h2">Gallery of Completed Commissions:</h2>
     <div className="gallery">
       <div className={classes.root}>
         <ImageList rowHeight={250} className={classes.imageList}>
@@ -54,8 +56,9 @@ export default function Gallery() {
                   title={item.name}
                   subtitle={<span>by: {artistName.first_name} {artistName.last_name}</span>}
                   actionIcon={
-                    <IconButton aria-label={`info about ${item.artist_id}`} className={classes.icon}>
-                      <InfoIcon />
+                    <IconButton component={Link} to="/UserCommission"
+                    aria-label={`info about ${item.artist_id}`} className={classes.icon}>
+                      <BrushIcon />
                     </IconButton>
                   }
                 />
