@@ -13,16 +13,18 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color:rgb(72, 53, 124)
+  
 }
 
 .ArtistAccount_div_h3{
   display: flex;
   justify-content: center;
-  background-color:rgb(41, 92, 150);
+  background-color: rgb(197, 185, 185);
   margin-left: 200px;
   margin-top: 10px;
   margin-right: 200px;
+  background-image: url('https://images.pexels.com/photos/122458/pexels-photo-122458.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
+  
   
 
   outline: black;
