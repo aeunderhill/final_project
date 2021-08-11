@@ -28,9 +28,9 @@
   width: 50%;
   height: 50%;
   display: flex;
-  margin: auto;
+  
   padding: 100px;
   justify-content: center; /*centers items on the line (the x-axis by default)*/
-  text-align: center;
+  
 
 }
