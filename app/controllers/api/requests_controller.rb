@@ -2,11 +2,10 @@ class Api::RequestsController < ApplicationController
   def index
     @requests = Request.all
       render json: @requests
+      p "Senayson"
   end
   
-  def update 
-    @request = Request.find(params[:id])
-  end
+  
   
   def create
     @request = Request.new(request_params)

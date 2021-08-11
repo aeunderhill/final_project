@@ -4,6 +4,7 @@ import axios from 'axios';
 import DashboardShowArtist from "./DashboardShowArtist.jsx"
 import FilterBar from "./FilterBar.jsx";
 import "./ArtistRequests.css"
+import { useEffect } from "react";
 
 const {requests_for_test, artists_for_test, users_for_test, categories_for_test} = require("../testingData")
 const {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequestsbyCategory,getRequestsbyUser, findUserbyUserId, getRequestsbyStatus} = require("../helpers/selectors")
@@ -12,33 +13,32 @@ export default function Dashboard(props) {
 
   const {data , setData} = useContext(stateContext);
 
-  console.log('DATA ---', data)
+  // console.log('DATA ---', data)
  
   const entries = Object.entries(data.requests)
   const initialDisplay = entries.map((item)=> item[1])
-  console.log('Initial' ,initialDisplay)
+  // console.log('Initial' ,initialDisplay)
  
   const [display, setDisplay] = useState([])
-  // setDisplay(initialDisplay)
 
-console.log('Display state',display)
+  // useEffect(() => {
+  //   setDisplay(initialDisplay)
+  // }, [data])
 
   const requests = getUnFinishedRequests(requests_for_test)
- 
 
   function acceptRequest(request) {
     const acceptedRequest = {...request[1], artist_id : 41}
     
       axios.put(`/api/requests/${request.id}`, acceptedRequest).then((response) => {
-        let id = acceptedRequest.id
+        let id = acceptedRequest.id 
         
       const requests = {...data.requests,  id : acceptedRequest}
 
-        
         setData((prev)=> ({...prev, requests : requests }))
       }).catch((error) => {console.log(error)})
     }
-    console.log("Categories", data.categoriesApi)
+    // console.log("Categories", data.categoriesApi)
     function filterbyCategory(display, e) {
       // alert("this is Filtering Category")
       console.log(data.categoriesApi)
@@ -48,28 +48,25 @@ console.log('Display state',display)
       console.log('Category selected', category)
       console.log('This is display',display)
       
-      // const requestsofCategory = getRequestsbyCategory(display, category.id)
+      // const requestsofCategory = getRequestsbyCategory(data.categoriesApi, category.id)
       // setDisplay(requestsofCategory)
   }
 
   function filterbyStatus(requests, e) {
-    // alert("this is Filtering Status")
-
+   
     const requestsofCategory = getRequestsbyStatus(requests, e.value)
     // console.log(e.label)
-    setDisplay(requestsofCategory)
+    setDisplay(requestsofCategory)  
   }
 
-  
-  
   let tag = null;
   let hidden = "";
   // let client;
 
-  const dashboard_unaccepted = Object.entries(data.requests).map((request) => {
+  const dashboard_unaccepted = entries.map((request) => {
     if (!request[1].artist_id && !request[1].start_date) {
       const client = findUserbyUserId(data.clientsApi, request[1].client_id)
-      // console.log(client)
+      console.log(client)
   
       return (
         request && <DashboardShowArtist 
@@ -87,12 +84,12 @@ console.log('Display state',display)
 
   })
 
-  const dashboard_accepted = Object.entries(data.requests).map((request) => {
+  const dashboard_accepted = entries.map((request) => {
     if (request[1].artist_id && !request[1].start_date) {
       tag = "accepted"
       hidden = "true"
       const client = findUserbyUserId(data.clientsApi, request[1].client_id)
-      // console.log('This is client' ,client)
+      console.log('This is client' ,client)
   
       return (
         request && <DashboardShowArtist 
@@ -109,13 +106,12 @@ console.log('Display state',display)
     }
   })
   
-  const dashboard_inprocess = Object.entries(data.requests).map((request) => {
+  const dashboard_inprocess = entries.map((request) => {
     
     if (request[1].artist_id && request[1].start_date) {
       tag = "in process"
       hidden = "true"
       const client = findUserbyUserId(data.clientsApi, request[1].client_id)
-      // console.log(client)
   
       return (
         request && <DashboardShowArtist 
@@ -131,7 +127,6 @@ console.log('Display state',display)
       return null
     }
   })
-
 
   const statusOptions = ['All', 'Unaccepted', 'Accepted', 'In Process'];
   let categoryOptions;
@@ -140,7 +135,6 @@ console.log('Display state',display)
     }
 
     console.log(categoryOptions)
-
 
   return (
     <main>

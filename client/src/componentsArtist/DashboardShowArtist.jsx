@@ -5,16 +5,9 @@ import Tag from "./Tag.jsx"
 import "./DashboardShowArtist.css"
 
 export default function Dashboard(props) {
-  // const {id, image, name, description, price, expected_finish_date,  actual_finish_date, index, acceptRequest, tag, hidden, client} = props
-
-  // const {requests_for_test, artists_for_test, users_for_test, categories_for_test} = require("../testingData")
-
-
 
   const {request, acceptRequest, hidden, client, tag} = props
-  // const client = findUserbyUserId(data)
-  // console.log('Request ---', props.request)
-  console.log('Client' , client)
+  
 return (
   <article className="request_show_dashboard" key={request.id}>
     
@@ -37,7 +30,7 @@ return (
       </div>
     
 
-      <div className="request_show_details">
+      {/* <div className="request_show_details">
         <label>Client Name: </label>
         <span>{client.first_name}</span>
       </div>
@@ -45,7 +38,7 @@ return (
       <div className="request_show_details">
         <label>Client email: </label>
         <span>{client.email}</span>
-      </div>
+      </div> */}
 
       {request.actual_finish_date ? (
       <div className="request_show_details">
