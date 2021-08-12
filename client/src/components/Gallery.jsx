@@ -1,8 +1,8 @@
 import React, {useState, useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import ImageList from '@material-ui/core/ImageList';
-import ImageListItem from '@material-ui/core/ImageListItem';
-import ImageListItemBar from '@material-ui/core/ImageListItemBar';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
 import useData from "../hooks/useData.js";
@@ -26,14 +26,14 @@ export default function Gallery() {
     <h2 className="gallery_h2">Gallery</h2>
     <div className="gallery">
       <div >
-        <ImageList >
+        <GridList >
           {requests.map((item) => {
-            console.log(data.clientsApi)
+            // console.log(data.clientsApi)
             let artistName = findArtistbyArtistId(data.artistsApi, item.artist_id)[0]
             return(
-              <ImageListItem key={item.id}>
-                <img className="gallery_img" src={item.image} alt={item.name} />
-                <ImageListItemBar
+              <GridListTile key={item.id} cols={0.65}>
+                <img className="img-thumbnail rounded" src={item.image} alt={item.name} />
+                <GridListTileBar
                   title={item.name}
                   subtitle={<span>by: {artistName.first_name} {artistName.last_name}</span>}
                   actionIcon={
@@ -42,10 +42,10 @@ export default function Gallery() {
                     </IconButton>
                   }
                 />
-              </ImageListItem>
+              </GridListTile>
             )
           })}
-        </ImageList>
+        </GridList>
       </div>
     </div>
     </>
