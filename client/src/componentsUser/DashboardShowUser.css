@@ -33,7 +33,8 @@
 }
 
 .request_show_dashboard_h2{
-  width: 30%;
+  width: 100%;
+  margin-top: 5%;
 }
 
 .request_show_dashboard_img{
