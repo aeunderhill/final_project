@@ -103,9 +103,9 @@ Category.destroy_all
 
 Client.create(
   id: 1,
-  first_name: "Lun",
-  last_name: "Ji",
-  email: "Lun@gmail.com",
+  first_name: "Senay",
+  last_name: "Alema",
+  email: "Senay@gmail.com",
   password: 12345,
   phone_number: "604-729-0794",
 )
@@ -185,21 +185,21 @@ Artist.create(
 
 Category.create(
   id: 1,
-  name: "Guitar",
+  name: "Artwork",
 )
 Category.create(
   id: 2,
-  name: "Art",
+  name: "Instruments",
 )
 Category.create(
   id: 3,
-  name: "HandyCraft"
+  name: "Hand Crafts"
 )
 
 Request.create(
-  name: "Golden Guitar",
-  image: "https://cdn.mos.cms.futurecdn.net/Ge25ccbyKQ76Et9bBjFnxk-1024-80.jpg.webp",
-  description: "5 with the same structure but different color",
+  name: "Please",
+  image: "https://images.unsplash.com/photo-1617503752587-97d2103a96ea?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YXJ0d29ya3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+  description: "Up to you",
   start_date: nil,
   expected_finish_date: "2021-08-31",
   actual_finish_date: nil,
@@ -209,62 +209,89 @@ Request.create(
   category_id: 1,
 )
 Request.create(
-  name: "Sun and Moon",
+  name: "Paint",
   image:
-    "https://images.glaciermedia.ca/polopoly_fs/1.24212567.1601479674!/fileImage/httpImage/image.jpg_gen/derivatives/landscape_804/kamloops-art-page-2.jpg",
-  description: "urgent request",
+    "https://images.unsplash.com/photo-1614519679857-2f21e9d25ca1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGFydHdvcmt8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+  description: "Paint whatever you want",
   start_date: nil,
   expected_finish_date: "2021-02-01",
   actual_finish_date: nil,
   price: 40,
   client_id: 2,
   artist_id: nil,
+  category_id: 1,
+)
+Request.create(
+  name: "Me",
+  image:
+    "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fGFydHdvcmt8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+  description: "Follow your heart",
+  start_date: "2021-01-01",
+  expected_finish_date: "2021-02-01",
+  actual_finish_date: nil,
+  price: 30,
+  client_id: 1,
+  artist_id: 1,
+  category_id: 1,
+)
+Request.create(
+  name: "Something",
+  image:
+    "https://images.unsplash.com/photo-1575995872537-3793d29d972c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fGFydHdvcmt8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+  description: "I'm blind anyways",
+  start_date: nil,
+  expected_finish_date: "2021-08-31",
+  actual_finish_date: nil,
+  price: 20,
+  client_id: 1,
+  artist_id: 1,
+  category_id: 1,
+)
+Request.create(
+  name: "Nice",
+  image:
+    "https://images.unsplash.com/photo-1544409527-b0bbb5ab0013?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDR8fGFydHdvcmt8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+  description: "Nice",
+  start_date: nil,
+  expected_finish_date: "2021-08-31",
+  actual_finish_date: nil,
+  price: 20,
+  client_id: 1,
+  artist_id: 1,
+  category_id: 1,
+)
+Request.create(
+  name: "Gold Guitar",
+  image:
+    "https://images.pexels.com/photos/221629/pexels-photo-221629.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+  description: "Solid Gold like Sadaams AK please",
+  start_date: nil,
+  expected_finish_date: "2021-08-31",
+  actual_finish_date: nil,
+  price: 20,
+  client_id: 2,
+  artist_id: 2,
   category_id: 2,
 )
 Request.create(
-  name: "Eletronic Guitar",
+  name: "Table",
   image:
-    "https://i5.walmartimages.ca/images/Large/655/498/6000200655498.jpg",
-  description: "must be loud enough",
-  start_date: "2021-01-01",
-  expected_finish_date: "2021-02-01",
-  actual_finish_date: nil,
-  price: 30,
-  client_id: 1,
-  artist_id: 1,
-  category_id: 1,
-)
-Request.create(
-  name: "Silver Guitar",
-  image:
-    "https://www.takamine.com/templates/default/images/g90.png",
-  description: "made by maple wood",
+    "https://images.pexels.com/photos/2451264/pexels-photo-2451264.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+  description: "Tired of eating on the floor",
   start_date: nil,
   expected_finish_date: "2021-08-31",
   actual_finish_date: nil,
   price: 20,
-  client_id: 1,
-  artist_id: 1,
-  category_id: 1,
+  client_id: 2,
+  artist_id: 2,
+  category_id: 2,
 )
+
 Request.create(
-  name: "Wooden Guitar",
+  name: "I",
   image:
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVpjMMENqDh1CzrvJrARwvUdl9zSqtPq1dBw&usqp=CAU",
-  description: "made by pine wood",
-  start_date: nil,
-  expected_finish_date: "2021-08-31",
-  actual_finish_date: nil,
-  price: 20,
-  client_id: 1,
-  artist_id: 1,
-  category_id: 1,
-)
-Request.create(
-  name: "Best Guitar",
-  image:
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSExP7EcgzcggW5C_rzjKP-8cmshYw3-El36w&usqp=CAU",
-  description: "Must be Softwood",
+    "https://images.unsplash.com/photo-1544224690-d3d430bef970?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTZ8fGFydHdvcmt8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+  description: "easy to please",
   start_date: "2021-01-01",
   expected_finish_date: "2021-02-01",
   actual_finish_date: "2021-03-01",
@@ -274,10 +301,10 @@ Request.create(
   category_id: 1,
 )
 Request.create(
-  name: "Softwood Guitar",
+  name: "Can't",
   image:
-    "https://online.berklee.edu/takenote/wp-content/uploads/2020/07/learn_acoustic_blues_guitar_article_image.jpg",
-  description: "made by hardwood",
+    "https://images.unsplash.com/photo-1582562124811-c09040d0a901?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTV8fGFydHdvcmt8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+  description: "i trust you with my life",
   start_date: "2021-01-01",
   expected_finish_date: "2021-02-01",
   actual_finish_date: "2021-03-01",
@@ -287,10 +314,10 @@ Request.create(
   category_id: 1,
 )
 Request.create(
-  name: "Platinum Guitar",
+  name: "Believe",
   image:
-    "https://ewww.music-lessons.ca/wp-content/uploads/2012/04/Acoustic-Guitar.jpeg?strip=all&lossy=1&quality=90&ssl=1",
-  description: "made by maple wood",
+    "https://images.unsplash.com/photo-1580136579329-4b4594825880?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTR8fGFydHdvcmt8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+  description: "dont screw this up",
   start_date: "2021-01-01",
   expected_finish_date: "2021-02-01",
   actual_finish_date: "2021-03-01",
@@ -300,10 +327,10 @@ Request.create(
   category_id: 1,
 )
 Request.create(
-  name: "Tide",
+  name: "It's",
   image:
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRvCK7jKPos2NjT-elyRA6Jn8crm5VLboElA&usqp=CAU",
-  description: "made by maple wood",
+    "https://images.unsplash.com/photo-1618913001600-4284b12e1623?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODR8fGFydHdvcmt8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+  description: "i cant paint",
   start_date: "2021-01-01",
   expected_finish_date: "2021-02-01",
   actual_finish_date: "2021-03-01",
@@ -313,10 +340,10 @@ Request.create(
   category_id: 1,
 )
 Request.create(
-  name: "City Tree",
+  name: "Not",
   image:
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpQlfxkMaQJFnfWT24bFhhw_7HG4b-7Fo78g&usqp=CAU",
-  description: "made by maple wood",
+    "https://images.unsplash.com/photo-1582561879360-b5f835317f05?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTI0fHxhcnR3b3JrfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+  description: "i hope you can paint",
   start_date: "2021-01-01",
   expected_finish_date: "2021-02-01",
   actual_finish_date: "2021-03-01",
@@ -326,10 +353,10 @@ Request.create(
   category_id: 1,
 )
 Request.create(
-  name: "Fancy Guitar",
+  name: "Butter",
   image:
-    "https://cdn.shopify.com/s/files/1/3098/9898/products/esp-v-50-blk-ltd-electric-guitar-black-item-type-solid-body-guitars-manufacturer-on-sale-price-250-499-fleet-pro-sound_279_1024x1024@2x.jpg?v=1606346733",
-  description: "made by maple wood",
+    "https://images.unsplash.com/photo-1614843446128-ab25315f1536?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTM4fHxhcnR3b3JrfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+  description: "i like the colour red",
   start_date: "2021-01-01",
   expected_finish_date: "2021-02-01",
   actual_finish_date: "2021-03-01",
@@ -339,10 +366,10 @@ Request.create(
   category_id: 1,
 )
 Request.create(
-  name: "guitar",
+  name: "Hmmm....",
   image:
-    "https://www.pictureframesexpress.co.uk/blog/wp-content/uploads/2020/05/7-Tips-to-Finding-Art-Inspiration-Header-1024x649.jpg",
-  description: "made by maple wood",
+    "https://images.unsplash.com/photo-1578320743746-788d990bd318?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTYwfHxhcnR3b3JrfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+  description: "good luck",
   start_date: "2021-01-01",
   expected_finish_date: "2021-02-01",
   actual_finish_date: "2021-03-01",
@@ -352,10 +379,10 @@ Request.create(
   category_id: 1,
 )
 Request.create(
-  name: "Art Sculpture",
+  name: "Butter",
   image:
-    "https://www.metmuseum.org/-/media/images/art/collection-landing-page/collection-highlights/fragment-queen.jpg?as=1&la=en&mh=848&mw=1344&hash=792C7AC097CDFD3D161801517B047CBF",
-  description: "made by maple wood",
+    "https://images.unsplash.com/photo-1578321272794-79e82a581d5d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTgzfHxhcnR3b3JrfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+  description: "urgent request",
   start_date: "2021-01-01",
   expected_finish_date: "2021-02-01",
   actual_finish_date: "2021-03-01",
