@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
 import useData from "../hooks/useData.js";
 import "./layout.css"
+import "./Gallery.css"
 
 // import Comment from './comment.js.jsx';
 
@@ -14,27 +15,9 @@ import "./layout.css"
 const {requests_for_test, artists_for_test, users_for_test, categories_for_test} = require("../testingData")
 const {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequestsbyCategory,getRequestsbyUser, findUserbyUserId, getRequestsbyStatus, findArtistbyArtistId} = require("../helpers/selectors")
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper, 
-  },
-  imageList: {
-    width: 905,
-    height: 500,
-    
-  },
-  icon: {
-    color: 'rgba(255, 255, 255, 0.54)',
-  },
-}));
-
  
 export default function Gallery() {
-  const classes = useStyles();
+  // const classes = useStyles();
   const {data} = useData()
   const requests = getFinishedRequests(data.requestsApi)
 
@@ -42,8 +25,8 @@ export default function Gallery() {
     <>
     <h2 className="gallery_h2">Gallery</h2>
     <div className="gallery">
-      <div className={classes.root}>
-        <ImageList rowHeight={250} className={classes.imageList}>
+      <div >
+        <ImageList >
           {requests.map((item) => {
             console.log(data.clientsApi)
             let artistName = findArtistbyArtistId(data.artistsApi, item.artist_id)[0]
@@ -54,7 +37,7 @@ export default function Gallery() {
                   title={item.name}
                   subtitle={<span>by: {artistName.first_name} {artistName.last_name}</span>}
                   actionIcon={
-                    <IconButton aria-label={`info about ${item.artist_id}`} className={classes.icon}>
+                    <IconButton aria-label={`info about ${item.artist_id}`}>
                       <InfoIcon />
                     </IconButton>
                   }
@@ -68,3 +51,5 @@ export default function Gallery() {
     </>
   );
 }
+
+
