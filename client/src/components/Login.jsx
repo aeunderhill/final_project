@@ -89,7 +89,9 @@ export default function Login() {
   let identity = "client"
   const login = function() {
     if (identity === "client") {
+      console.log(user.email)
       let loginClient = findUserbyEmail(users_for_test, user.email)[0]
+      console.log(loginClient)
       cookies.set('user_id', loginClient.id, { path: '/' });
       cookies.set('identity', 'client', { path: '/' });
       

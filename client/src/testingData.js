@@ -233,7 +233,7 @@ const artists_for_test = [
 
 const users_for_test = [
   {
-    id: 1,
+    id: 4,
     name: "Lun",
     email: "Lun@gmail.com",
     password: 12345,
@@ -248,17 +248,17 @@ const users_for_test = [
   },
   {
     id: 3,
-    name: "client3",
-    email: "test3@gmail.com",
+    name: "Adam",
+    email: "Adam@gmail.com",
     password: 12345,
-    contact: "778-124-1946",
+    contact: "604-333-3333",
   },
   {
-    id: 4,
-    name: "client4",
-    email: "test4@gmail.com",
+    id: 1,
+    name: "Senay",
+    email: "Senay@gmail.com",
     password: 12345,
-    contact: "225-151-7747",
+    contact: "604-444-4444",
   },
 ];
 

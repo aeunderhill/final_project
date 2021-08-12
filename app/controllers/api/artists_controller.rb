@@ -1,17 +1,6 @@
 class Api::ArtistsController < ApplicationController
   def index
     @artists = Artist.all
-    #  artists = []
-    # @artists.each do |artist|
-    #   artistHash = artist[:id] 
-    #   artistHash = { }
-    #   @artistReviews = Review.artistreview(artist[:id])
-    #   ids = []
-    # @artistReviews.each do |rev| ids.push rev[:id] end
-    
-    #   artistHash["reviews"] = ids
-    #   artists.push artistHash
-    # end
     render json: @artists
   end
 
